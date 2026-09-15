@@ -10,6 +10,8 @@ let isDeleting = false;
 const typingElement = document.getElementById("typing");
 
 function typeEffect() {
+  if (!typingElement) return;
+
   const currentWord = words[wordIndex];
 
   if (isDeleting) {
@@ -34,50 +36,52 @@ function typeEffect() {
   setTimeout(typeEffect, typeSpeed);
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+// Jalankan semua logika setelah DOM siap
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Efek Ketik
+  typeEffect();
 
-// Slider Auto-Fade Foto Profil
-const images = document.querySelectorAll(".hero-img");
-let currentImgIndex = 0;
+  // 2. Slider Auto-Fade Foto Profil
+  const images = document.querySelectorAll(".hero-img");
+  let currentImgIndex = 0;
 
-function changeImage() {
-  // Sembunyikan foto saat ini (hapus class active)
-  images[currentImgIndex].classList.remove("active");
-
-  // Pindah ke indeks foto berikutnya
-  currentImgIndex = (currentImgIndex + 1) % images.length;
-
-  // Tampilkan foto baru (tambah class active)
-  images[currentImgIndex].classList.add("active");
-}
-
-// Ganti foto setiap 4 detik (4000 milidetik)
-setInterval(changeImage, 4000);
-
-// Logika Toggle Hamburger Menu
-const hamburgerBtn = document.getElementById("hamburger-btn");
-const navMenu = document.getElementById("nav-menu");
-const hamburgerIcon = hamburgerBtn.querySelector("i");
-
-hamburgerBtn.addEventListener("click", () => {
-  // 1. Tambah/Hapus class 'active' di nav-links
-  navMenu.classList.toggle("active");
-
-  // 2. Ubah ikon dari 'garis tiga' (fa-bars) jadi 'silang' (fa-xmark)
-  if (navMenu.classList.contains("active")) {
-    hamburgerIcon.classList.remove("fa-bars");
-    hamburgerIcon.classList.add("fa-xmark");
-  } else {
-    hamburgerIcon.classList.remove("fa-xmark");
-    hamburgerIcon.classList.add("fa-bars");
+  if (images.length > 0) {
+    setInterval(() => {
+      images[currentImgIndex].classList.remove("active");
+      currentImgIndex = (currentImgIndex + 1) % images.length;
+      images[currentImgIndex].classList.add("active");
+    }, 4000);
   }
-});
 
-// Otomatis tutup menu setelah pengguna mengklik salah satu link navigasi
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-    hamburgerIcon.classList.remove("fa-xmark");
-    hamburgerIcon.classList.add("fa-bars");
-  });
+  // 3. Hamburger Menu (Diisi Pengecekan Aman/Null-check)
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (hamburgerBtn && navMenu) {
+    const hamburgerIcon = hamburgerBtn.querySelector("i");
+
+    hamburgerBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+
+      if (hamburgerIcon) {
+        if (navMenu.classList.contains("active")) {
+          hamburgerIcon.classList.remove("fa-bars");
+          hamburgerIcon.classList.add("fa-xmark");
+        } else {
+          hamburgerIcon.classList.remove("fa-xmark");
+          hamburgerIcon.classList.add("fa-bars");
+        }
+      }
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        if (hamburgerIcon) {
+          hamburgerIcon.classList.remove("fa-xmark");
+          hamburgerIcon.classList.add("fa-bars");
+        }
+      });
+    });
+  }
 });

@@ -268,10 +268,9 @@ main {
     gap: 1.2rem;
     display: none;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-
-    .nav-links.active {
-      display: flex;
-    }
+  }
+  .nav-links.active {
+    display: flex;
   }
 }
 
