@@ -388,3 +388,15 @@ main {
 .social-card:hover i {
   transform: scale(1.15);
 }
+
+.hero-details-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logocampus {
+  width: 90px;
+  height: auto;
+}
