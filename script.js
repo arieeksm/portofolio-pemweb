@@ -53,3 +53,31 @@ function changeImage() {
 
 // Ganti foto setiap 4 detik (4000 milidetik)
 setInterval(changeImage, 4000);
+
+// Logika Toggle Hamburger Menu
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const navMenu = document.getElementById("nav-menu");
+const hamburgerIcon = hamburgerBtn.querySelector("i");
+
+hamburgerBtn.addEventListener("click", () => {
+  // 1. Tambah/Hapus class 'active' di nav-links
+  navMenu.classList.toggle("active");
+
+  // 2. Ubah ikon dari 'garis tiga' (fa-bars) jadi 'silang' (fa-xmark)
+  if (navMenu.classList.contains("active")) {
+    hamburgerIcon.classList.remove("fa-bars");
+    hamburgerIcon.classList.add("fa-xmark");
+  } else {
+    hamburgerIcon.classList.remove("fa-xmark");
+    hamburgerIcon.classList.add("fa-bars");
+  }
+});
+
+// Otomatis tutup menu setelah pengguna mengklik salah satu link navigasi
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    hamburgerIcon.classList.remove("fa-xmark");
+    hamburgerIcon.classList.add("fa-bars");
+  });
+});

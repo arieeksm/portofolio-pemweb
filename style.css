@@ -242,6 +242,39 @@ main {
   transform: translateY(-8px);
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-green);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--deep-jade);
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 1.2rem;
+    display: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+    .nav-links.active {
+      display: flex;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     flex-direction: column-reverse;
