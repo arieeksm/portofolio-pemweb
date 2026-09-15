@@ -218,7 +218,6 @@ main {
   transition: transform 0.3s ease;
 }
 
-/* Efek Floating / Interaktif saat Hover */
 .hero-image:hover img {
   transform: translateY(-8px);
 }
