@@ -1,0 +1,356 @@
+:root {
+  --bg-main: #111625;
+  --bg-card: #16222f;
+  --bg-header: #0c101b;
+
+  --primary-green: #57a794;
+  --deep-jade: #1f4037;
+
+  --text-main: #eceff1;
+  --text-muted: #90a4ae;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--deep-jade);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.brand-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.brand-logo:hover {
+  color: var(--text-main);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-green);
+}
+
+.nav-links .nav-btn {
+  background-color: var(--primary-green);
+  color: #111625;
+  padding: 0.4rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-links .nav-btn:hover {
+  background-color: #6bbba8;
+  box-shadow: 0 0 12px rgba(87, 167, 148, 0.4);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 4rem 1rem;
+}
+
+.hero-text {
+  flex: 1.2;
+  text-align: left;
+}
+
+.hero-text .greeting {
+  color: var(--primary-green);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  color: var(--text-main);
+  text-align: left;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--primary-green);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.hero-details {
+  background-color: var(--bg-card);
+  border-left: 4px solid var(--primary-green);
+  padding: 1rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1.5rem;
+}
+
+.hero-details p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.hero-details strong {
+  color: var(--text-main);
+}
+
+.hero-description {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: #111625;
+}
+
+.btn-primary:hover {
+  background-color: #6bbba8;
+  box-shadow: 0 0 15px rgba(87, 167, 148, 0.3);
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-green);
+  color: #111625;
+  box-shadow: 0 0 15px rgba(87, 167, 148, 0.3);
+}
+
+.hero-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary-green);
+  box-shadow: 0 0 25px rgba(87, 167, 148, 0.2);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .hero-text,
+  .hero-title {
+    text-align: center;
+  }
+
+  .hero-details {
+    border-left: none;
+    border-top: 4px solid var(--primary-green);
+    border-radius: 0 0 8px 8px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+.typing-container {
+  display: inline-block;
+}
+
+.typing-text {
+  font-family: monospace;
+  font-size: 2rem;
+  color: var(--primary-green, #57a794);
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border-right: 3px solid var(--primary-green, #57a794);
+
+  width: 0;
+
+  animation:
+    typing 3.5s steps(23, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary-green, #57a794);
+  }
+}
+
+.hero-title {
+  font-size: 2rem;
+  color: var(--text-main);
+  text-align: left;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--primary-green);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  min-height: 1.6em;
+}
+
+.cursor {
+  color: var(--primary-green);
+  font-weight: bold;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cta-section {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  width: 100%;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+}
+
+.cta-section p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.social-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--deep-jade);
+  padding: 1.2rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.social-card i {
+  font-size: 1.8rem;
+  color: var(--primary-green);
+  transition: transform 0.3s ease;
+}
+
+.social-card:hover {
+  border-color: var(--primary-green);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(87, 167, 148, 0.2);
+}
+
+.social-card:hover i {
+  transform: scale(1.15);
+}
