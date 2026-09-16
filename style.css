@@ -126,6 +126,11 @@ main {
   text-align: left;
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  transition: all 0.3s ease;
+}
+
+.hero-title:hover {
+  color: #909091;
 }
 
 .hero-subtitle {
@@ -510,4 +515,9 @@ main {
   color: var(--primary-green);
   margin-bottom: 0.5rem;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+#title-porto:hover {
+  color: #3c7467;
 }
