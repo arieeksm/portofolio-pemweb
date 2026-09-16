@@ -438,3 +438,76 @@ main {
   width: 90px;
   height: auto;
 }
+
+/* 1. Pengatur Tata Letak Grid (Responsif Otomatis) */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* 2. Desain Kotak Kartu (Senada dengan Tema Kartu Kontak) */
+.portfolio-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--deep-jade);
+  border-radius: 10px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  /* Transisi halus untuk animasi hover */
+  transition: all 0.3s ease;
+}
+
+/* 3. Penomoran Estetik */
+.card-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  font-family: monospace;
+}
+
+/* 4. Judul & Deskripsi Proyek */
+.portfolio-card h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+}
+
+.portfolio-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 5. Tautan / Tombol dalam Kartu */
+.card-link {
+  margin-top: auto;
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.card-link:hover {
+  gap: 0.8rem; /* Efek geser ikon saat link di-hover */
+}
+
+/* 6. Animasi Hover (Efek Terangkat & Glow Hijau) */
+.portfolio-card:hover {
+  border-color: var(--primary-green);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(87, 167, 148, 0.2);
+}
+
+#title-porto {
+  font-size: 1.5rem;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
