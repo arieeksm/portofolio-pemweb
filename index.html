@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,56 +7,110 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
     <link rel="icon" type="image/png" href="web-logo.png" />
     <title>Portofolio - Arie Ardinata Kusuma</title>
   </head>
-  <body>
-    <header class="navbar">
-      <div class="navbar-container">
-        <a href="#" class="brand-logo">Arie Ardinata Kusuma</a>
+  <body class="bg-bg-main text-text-main font-sans leading-relaxed">
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 w-full bg-bg-header/65 backdrop-blur-md border-b border-deep-jade/50 shadow-lg z-50"
+    >
+      <div
+        class="max-w-[1100px] mx-auto flex justify-between items-center px-8 py-4"
+      >
+        <a
+          href="#"
+          class="text-xl font-bold text-primary-green tracking-wide hover:text-text-main transition-colors duration-300"
+        >
+          Arie Ardinata Kusuma
+        </a>
 
         <button
-          class="hamburger"
+          class="md:hidden text-primary-green text-2xl focus:outline-none"
           id="hamburger-btn"
           aria-label="Toggle Navigation"
         >
           <i class="fa-solid fa-bars"></i>
         </button>
 
-        <nav class="nav-links" id="nav-menu">
-          <a href="#tentang">Tentang Saya</a>
-          <a href="#portfolio">Portofolio</a>
-          <a href="#hobi">Hobi</a>
-          <a href="#kontak">Kontak</a>
+        <nav
+          class="hidden md:flex gap-7 items-center max-md:absolute max-md:top-full max-md:left-0 max-md:w-full max-md:bg-bg-header max-md:border-b max-md:border-deep-jade max-md:flex-col max-md:py-6 max-md:shadow-2xl"
+          id="nav-menu"
+        >
+          <a
+            href="#tentang"
+            class="text-text-main font-medium text-sm hover:text-primary-green transition-colors duration-300"
+            >Tentang Saya</a
+          >
+          <a
+            href="#portfolio"
+            class="text-text-main font-medium text-sm hover:text-primary-green transition-colors duration-300"
+            >Portofolio</a
+          >
+          <a
+            href="#hobi"
+            class="text-text-main font-medium text-sm hover:text-primary-green transition-colors duration-300"
+            >Hobi</a
+          >
+          <a
+            href="#kontak"
+            class="text-text-main font-medium text-sm hover:text-primary-green transition-colors duration-300"
+            >Kontak</a
+          >
         </nav>
       </div>
     </header>
-    <main>
-      <!-- Hero Section (Rata Kiri + Foto di Kanan) -->
-      <section id="tentang" class="hero">
-        <div class="hero-text">
-          <br />
-          <p class="greeting">Hello everyone 👋, I'm</p>
-          <h1 class="hero-title">Arie Ardinata Kusuma</h1>
 
-          <p class="hero-subtitle">
-            <span id="typing"></span><span class="cursor">|</span>
+    <main class="max-w-[1100px] mx-auto px-6 py-8">
+      <!-- Hero Section -->
+      <section
+        id="tentang"
+        class="flex flex-col-reverse md:flex-row items-center justify-between gap-12 py-8 md:py-16 text-center md:text-left"
+      >
+        <div class="flex-[1.2]">
+          <p
+            class="text-primary-green text-lg font-semibold tracking-wide mb-2"
+          >
+            Hello everyone 👋, I'm
+          </p>
+          <h1
+            class="text-3xl md:text-4xl font-bold text-text-main mb-2 hover:text-[#909091] transition-colors duration-300"
+          >
+            Arie Ardinata Kusuma
+          </h1>
+
+          <p class="text-lg text-primary-green font-medium mb-6 min-h-[1.6em]">
+            <span id="typing"></span
+            ><span class="cursor text-primary-green font-bold ml-0.5">|</span>
           </p>
 
-          <div class="hero-details">
-            <div class="hero-details-content">
-              <div class="hero-details-text">
-                <p><b>NIM:</b> 251401046</p>
-                <p><b>Major:</b> Computer Science</p>
-                <p><b>Faculty:</b> Computer Science & Information Technology</p>
+          <div
+            class="bg-bg-card border-t-4 md:border-t-0 md:border-l-4 border-primary-green p-4 rounded-b-lg md:rounded-r-lg md:rounded-bl-none mb-6"
+          >
+            <div class="flex items-center justify-between gap-4">
+              <div class="text-text-muted text-sm text-left">
+                <p class="mb-1"><b class="text-text-main">NIM:</b> 251401046</p>
+                <p class="mb-1">
+                  <b class="text-text-main">Major:</b> Computer Science
+                </p>
+                <p>
+                  <b class="text-text-main">Faculty:</b> Computer Science &
+                  Information Technology
+                </p>
               </div>
 
-              <img src="logo-usu.webp" alt="logo USU" class="logocampus" />
+              <img
+                src="logo-usu.webp"
+                alt="logo USU"
+                class="w-[90px] h-auto shrink-0"
+              />
             </div>
           </div>
 
-          <p class="hero-description">
+          <p
+            class="text-text-muted max-w-[520px] mx-auto md:mx-0 leading-relaxed"
+          >
             Hi, i'm in the middle of studying web programming and building this
             interactive portofolio web. 頑張ってね Ganbatte ne 🔥
             <br /><br />
@@ -67,95 +121,156 @@
           </p>
         </div>
 
-        <div class="hero-image">
-          <div class="img-backdrop"></div>
-          <img src="pnbg1.png" alt="Arie Ardinata 1" class="hero-img active" />
-          <img src="pnbg2.png" alt="Arie Ardinata 2" class="hero-img" />
+        <!-- Bagian Foto Profil (Sudah Disesuaikan) -->
+        <!-- Bagian Foto Profil (Saling Menumpuk Sempurna) -->
+        <div
+          class="relative flex justify-center items-end min-h-[360px] w-[300px] mx-auto md:mx-0 shrink-0"
+        >
+          <div
+            class="absolute bottom-0 w-[240px] h-[260px] bg-bg-card border-2 border-deep-jade rounded-2xl shadow-2xl z-0"
+          ></div>
+
+          <img
+            src="pnbg1.png"
+            alt="Arie Ardinata 1"
+            class="hero-img active absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-auto z-10 opacity-0 transition-opacity duration-1000 ease-in-out hover:-translate-y-2"
+          />
+          <img
+            src="pnbg2.png"
+            alt="Arie Ardinata 2"
+            class="hero-img absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-auto z-10 opacity-0 transition-opacity duration-1000 ease-in-out hover:-translate-y-2"
+          />
         </div>
       </section>
 
-      <section id="portfolio" class="content-section">
-        <div id="title-porto">
-          <h2>My Portofolio</h2>
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="py-8">
+        <div
+          id="title-porto"
+          class="text-2xl text-primary-green mb-2 text-center transition-colors duration-300 hover:text-[#3c7467]"
+        >
+          <h2 class="font-bold">My Portofolio</h2>
         </div>
-        <div class="portfolio-grid">
-          <div class="portfolio-card">
-            <div class="card-number">01</div>
-            <h3>Flipbook Aljabar Linear</h3>
-            <p>
+        <div
+          class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 mt-6"
+        >
+          <div
+            class="bg-bg-card border border-deep-jade rounded-lg p-7 flex flex-col gap-3 transition-all duration-300 hover:border-primary-green hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(87,167,148,0.2)]"
+          >
+            <div class="text-lg font-bold text-primary-green font-mono">01</div>
+            <h3 class="text-xl text-text-main font-semibold">
+              Flipbook Aljabar Linear
+            </h3>
+            <p class="text-text-muted text-sm leading-relaxed">
               Interactive learning media with dynamic page animation using HTML,
               CSS, and JavaScript.
             </p>
-            <a href="#" class="card-link"
-              >Lihat Proyek <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <a
+              href="#"
+              class="mt-auto text-primary-green font-semibold text-sm inline-flex items-center gap-2 transition-all duration-300 hover:gap-3"
+            >
+              Lihat Proyek <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
 
-          <div class="portfolio-card">
-            <div class="card-number">02</div>
-            <h3>Aplikasi Manajer Catatan</h3>
-            <p>
+          <div
+            class="bg-bg-card border border-deep-jade rounded-lg p-7 flex flex-col gap-3 transition-all duration-300 hover:border-primary-green hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(87,167,148,0.2)]"
+          >
+            <div class="text-lg font-bold text-primary-green font-mono">02</div>
+            <h3 class="text-xl text-text-main font-semibold">
+              Aplikasi Manajer Catatan
+            </h3>
+            <p class="text-text-muted text-sm leading-relaxed">
               An efficient data and records management system built with a
               structured programming language..
             </p>
-            <a href="#" class="card-link"
-              >Lihat Proyek <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <a
+              href="#"
+              class="mt-auto text-primary-green font-semibold text-sm inline-flex items-center gap-2 transition-all duration-300 hover:gap-3"
+            >
+              Lihat Proyek <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
 
-          <div class="portfolio-card">
-            <div class="card-number">03</div>
-            <h3>Flipbook Aljabar Linear</h3>
-            <p>
+          <div
+            class="bg-bg-card border border-deep-jade rounded-lg p-7 flex flex-col gap-3 transition-all duration-300 hover:border-primary-green hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(87,167,148,0.2)]"
+          >
+            <div class="text-lg font-bold text-primary-green font-mono">03</div>
+            <h3 class="text-xl text-text-main font-semibold">
+              Flipbook Aljabar Linear
+            </h3>
+            <p class="text-text-muted text-sm leading-relaxed">
               Outside the IT world, I write novels as an outlet for my interest
               and talent in literature.
             </p>
-            <a href="#" class="card-link"
-              >Lihat Proyek <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <a
+              href="#"
+              class="mt-auto text-primary-green font-semibold text-sm inline-flex items-center gap-2 transition-all duration-300 hover:gap-3"
+            >
+              Lihat Proyek <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="kontak" class="cta-section">
-        <h2>Let's stay connected</h2>
-        <p>Stay connected with me via the social media links below.</p>
+      <!-- Contact Section -->
+      <section id="kontak" class="text-center py-16 px-4 w-full">
+        <h2 class="text-3xl font-bold text-primary-green mb-2">
+          Let's stay connected
+        </h2>
+        <p class="text-text-muted mb-8">
+          Stay connected with me via the social media links below.
+        </p>
 
-        <div class="social-grid">
+        <div
+          class="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-5 max-w-[700px] mx-auto"
+        >
           <a
             href="https://instagram.com/arieeksm_id"
             target="_blank"
-            class="social-card"
+            class="group bg-bg-card border border-deep-jade p-[1.2rem_1rem] rounded-xl flex flex-col items-center gap-2 font-semibold text-text-main transition-all duration-300 hover:border-primary-green hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(87,167,148,0.2)]"
           >
-            <i class="fa-brands fa-instagram"></i>
+            <i
+              class="fa-brands fa-instagram text-3xl text-primary-green transition-transform duration-300 group-hover:scale-115"
+            ></i>
             <span>Instagram</span>
           </a>
 
           <a
             href="https://github.com/arieeksm"
             target="_blank"
-            class="social-card"
+            class="group bg-bg-card border border-deep-jade p-[1.2rem_1rem] rounded-xl flex flex-col items-center gap-2 font-semibold text-text-main transition-all duration-300 hover:border-primary-green hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(87,167,148,0.2)]"
           >
-            <i class="fa-brands fa-github"></i>
+            <i
+              class="fa-brands fa-github text-3xl text-primary-green transition-transform duration-300 group-hover:scale-115"
+            ></i>
             <span>GitHub</span>
           </a>
 
           <a
             href="https://www.linkedin.com/in/arieardinata-kusuma/"
             target="_blank"
-            class="social-card"
+            class="group bg-bg-card border border-deep-jade p-[1.2rem_1rem] rounded-xl flex flex-col items-center gap-2 font-semibold text-text-main transition-all duration-300 hover:border-primary-green hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(87,167,148,0.2)]"
           >
-            <i class="fa-brands fa-linkedin"></i>
+            <i
+              class="fa-brands fa-linkedin text-3xl text-primary-green transition-transform duration-300 group-hover:scale-115"
+            ></i>
             <span>LinkedIn</span>
           </a>
 
-          <a href="mailto:arieardinatakusuma3@gmail.com" class="social-card">
-            <i class="fa-solid fa-envelope"></i>
+          <a
+            href="mailto:arieardinatakusuma3@gmail.com"
+            class="group bg-bg-card border border-deep-jade p-[1.2rem_1rem] rounded-xl flex flex-col items-center gap-2 font-semibold text-text-main transition-all duration-300 hover:border-primary-green hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(87,167,148,0.2)]"
+          >
+            <i
+              class="fa-solid fa-envelope text-3xl text-primary-green transition-transform duration-300 group-hover:scale-115"
+            ></i>
             <span>Email</span>
           </a>
         </div>
       </section>
     </main>
+
     <script src="script.js"></script>
   </body>
 </html>
